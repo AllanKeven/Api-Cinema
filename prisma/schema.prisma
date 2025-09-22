@@ -16,30 +16,32 @@ datasource db {
 
 model User {
   id       String @id @default(auto()) @map("_id") @db.ObjectId
-  name     String @unique
-  email    String
+  name     String 
+  email    String @unique
   password String
+  role     String
 }
 
 model Movies {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  title String
-  synopsis String
-  posterURL String
-  trailerURL String
-  genre String
-  duration Int
-  ageRating  Int  
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  synopsis    String
+  posterURL   String
+  trailerURL  String
+  genre       String
+  duration    Int
+  ageRating   Int
   releaseDate String
 }
 
-model Theater{
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-
-
+model Cinema {
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  name     String
+  city     String
+  address  String
+  isActive Boolean
 }
 
 model Sessions {
   id String @id @default(auto()) @map("_id") @db.ObjectId
-
 }
