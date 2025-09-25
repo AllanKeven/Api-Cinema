@@ -30,16 +30,37 @@ model Movies {
   genre String
   duration Int
   ageRating  Int  
-  releaseDate String
+  releaseDate DateTime
+
+  Sessions Sessions[]
 }
 
 model Theater{
   id String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+  location String
+  capacity Int
+  phone String
+  email String
+  rooms Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
+  
 
+  Sessions Sessions[]
 }
 
 model Sessions {
   id String @id @default(auto()) @map("_id") @db.ObjectId
+  movieId String @db.ObjectId
+  theaterId String @db.ObjectId
+  room Int
+  startTime DateTime
+  endTime DateTime
+  price Float
+
+  movie Movies @relation(fields: [movieId], references: [ id])  
+  theater Theater @relation(fields:[theaterId], references: [id])
 
 }
