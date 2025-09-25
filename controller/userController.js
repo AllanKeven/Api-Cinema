@@ -19,7 +19,7 @@ class userController{
                     password: hashedPassword
                 }
             });
-            res.status(201).json({message:"User Criado comn sucesso!"});
+            res.status(201).json({message:"User Criado comn sucesso!", user: newUser});
             
 
 
