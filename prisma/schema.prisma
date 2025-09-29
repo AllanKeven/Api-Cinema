@@ -23,7 +23,6 @@ model User {
 }
 
 model Movies {
-<<<<<<< HEAD
   id String @id @default(auto()) @map("_id") @db.ObjectId
   title String
   synopsis String
@@ -51,30 +50,10 @@ model Theater{
   
 
   Sessions Sessions[]
-=======
-  id          String @id @default(auto()) @map("_id") @db.ObjectId
-  title       String
-  synopsis    String
-  posterURL   String
-  trailerURL  String
-  genre       String
-  duration    Int
-  ageRating   Int
-  releaseDate String
-}
-
-model Cinema {
-  id       String  @id @default(auto()) @map("_id") @db.ObjectId
-  name     String
-  city     String
-  address  String
-  isActive Boolean
->>>>>>> eacafecb0d1336ea0c99519e62de5b3e2fc7cd11
 }
 
 model Sessions {
   id String @id @default(auto()) @map("_id") @db.ObjectId
-<<<<<<< HEAD
   movieId String @db.ObjectId
   theaterId String @db.ObjectId
   room Int
@@ -85,6 +64,5 @@ model Sessions {
   movie Movies @relation(fields: [movieId], references: [ id])  
   theater Theater @relation(fields:[theaterId], references: [id])
 
-=======
->>>>>>> eacafecb0d1336ea0c99519e62de5b3e2fc7cd11
 }
+
